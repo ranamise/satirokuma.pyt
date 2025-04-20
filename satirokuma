@@ -1,0 +1,21 @@
+metin = input("Bir metin girin: ")
+
+with open("ornek1.txt", "w", encoding="utf-8") as dosya:
+    dosya.write(metin)
+
+with open("ornek1.txt", "r", encoding="utf-8") as dosya:
+    icerik = dosya.read()
+    print("\nDosya içeriği:")
+    print(icerik)
+
+# 5 satırlık veri alma
+with open("ornek2.txt", "w", encoding="utf-8") as dosya:
+    for i in range(5):
+        satir = input(f"{i+1}. satırı girin: ")
+        dosya.write(satir + "\n")
+
+# Dosyayı satır satır okuma
+print("\nDosyadaki satırlar:")
+with open("ornek2.txt", "r", encoding="utf-8") as dosya:
+    for satir in dosya:
+        print(satir.strip())
